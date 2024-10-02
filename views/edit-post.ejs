@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Load Tailwind CSS -->
+</head>
+<body class="bg-zinc-900 text-white"> <!-- Change body background color -->
+
+    <!-- Navigation Bar -->
+    <nav class="bg-zinc-800 shadow-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/profile" class="text-xl font-semibold text-white hover:text-blue-500">My Profile</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="max-w-2xl mx-auto mt-10 p-8 bg-zinc-800 shadow-lg rounded-lg"> <!-- Change container background color -->
+        <h1 class="text-3xl font-bold mb-6 text-blue-400">Edit Your Post</h1> <!-- Change text color -->
+        
+        <!-- Edit Post Form -->
+        <form method="POST" action="/update-post/<%= post._id %>">
+            <!-- Post Content -->
+            <div class="mb-6">
+                <label for="content" class="block text-sm font-medium text-gray-300">Post Content</label> <!-- Change label color -->
+                <textarea id="content" name="content" rows="5" class="mt-2 p-3 w-full bg-transparent border-2 border-zinc-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Edit your post..."><%= post.content %></textarea>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex justify-between items-center">
+                <a href="/profile" class="px-4 py-2 bg-gray-600 hover:bg-gray-500 rounded-md text-gray-300">Cancel</a> <!-- Change button color -->
+                <button type="submit" class="px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-md text-white">Save Changes</button> <!-- Keep this button color -->
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 bg-zinc-800 p-4"> <!-- Change footer background color -->
+        <div class="text-center text-gray-400">
+            &copy; 2024 Your Website. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
